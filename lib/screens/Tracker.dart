@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/constants.dart';
 
 class Tracker extends StatefulWidget {
   @override
@@ -8,6 +9,14 @@ class Tracker extends StatefulWidget {
 class _TrackerState extends State<Tracker> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      resizeToAvoidBottomPadding: false,
+      appBar:  AppBar(
+        backgroundColor: mPrimaryColor,
+        elevation: 0,
+        title: Text("Covid-19 tracker live data"),
+        centerTitle: true,
+      )
+    );
   }
 }
