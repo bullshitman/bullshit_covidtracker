@@ -56,7 +56,7 @@ class GlobalStatistics extends StatelessWidget {
       child: Container(
         //some devices cant render update info, so we will shrink this height
         height: 92,
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           children: <Widget>[
             Text(

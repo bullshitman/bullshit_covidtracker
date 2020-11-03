@@ -11,6 +11,7 @@ class GlobalLoading extends StatelessWidget {
         loadingCard(),
         loadingCard(),
         loadingCard(),
+        loadingLabel(),
       ],
     );
   }
@@ -48,6 +49,25 @@ class GlobalLoading extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget loadingLabel() {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 8),
+      child: Shimmer.fromColors(
+        baseColor: Colors.blue[300],
+        highlightColor: Colors.blue[600],
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: 200,
+              height: 16,
+              color: Colors.white,
+            ),
+          ],
         ),
       ),
     );

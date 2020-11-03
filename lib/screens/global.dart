@@ -3,6 +3,7 @@ import '../services/covid_services.dart';
 import '../models/global_summary.dart';
 import 'global_statistisc.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'global_loading.dart';
 
 CovidServise covidServise = CovidServise();
 
@@ -62,9 +63,7 @@ class _GlobalState extends State<Global> {
             }
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:
-                return Center(
-                  child: Text("Loading"),
-                );
+                return GlobalLoading();
               default:
                 return !snapshot.hasData
                     ? Center(
