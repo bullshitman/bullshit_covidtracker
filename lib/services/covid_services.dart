@@ -7,7 +7,7 @@ import 'dart:convert';
 class CovidServise{
   //global summary cases
   Future<GlobalSummaryModel> getGlobalSummary() async {
-    final data = await http.Client().get("https://api.covis19api.com/summary");
+    final data = await http.Client().get("https://api.covid19api.com/summary");
     if (data.statusCode != 200){
       throw Exception();
     }
