@@ -12,5 +12,6 @@ LinearGradient mGradientShimmer = LinearGradient(
   colors: [Colors.grey[300], Colors.grey[100]],
 );
 
+//clean
 RegExp reg = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
 Function mathFunc = (Match match) => '${match[1]}.';

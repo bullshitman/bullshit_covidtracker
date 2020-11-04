@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../services/covid_services.dart';
 import '../models/global_summary.dart';
 import 'global_statistisc.dart';
-import 'package:timeago/timeago.dart' as timeago;
 import 'global_loading.dart';
 
 CovidServise covidServise = CovidServise();

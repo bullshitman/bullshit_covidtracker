@@ -18,7 +18,7 @@ class CovidServise{
   }
   //country summary cases
   Future<List<CountrySummaryModel>> getCountrySummary(String slug) async {
-    final data = await http.Client().get("https://api.covid19api.com/total/dayone/country" + slug);
+    final data = await http.Client().get("https://api.covid19api.com/total/dayone/country/" + slug);
     if (data.statusCode != 200) {
       throw Exception();
     }

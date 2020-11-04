@@ -5,6 +5,7 @@ import 'package:timeago/timeago.dart' as timeago;
 
 class GlobalStatistics extends StatelessWidget {
   final GlobalSummaryModel summary;
+  //constructor
   GlobalStatistics({@required this.summary});
 
   @override
@@ -54,7 +55,7 @@ class GlobalStatistics extends StatelessWidget {
     return Card(
       elevation: 1,
       child: Container(
-        //some devices cant render update info, so we will shrink this height
+        //some devices can't render update info, so we will shrink this height
         height: 92,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
