@@ -3,6 +3,7 @@ import '../services/covid_services.dart';
 import '../models/global_summary.dart';
 import 'global_statistisc.dart';
 import 'global_loading.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 CovidServise covidServise = CovidServise();
 
@@ -31,7 +32,7 @@ class _GlobalState extends State<Global> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                "Global COVID-19 Cases",
+                'main_title'.tr().toString(),
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -57,7 +58,7 @@ class _GlobalState extends State<Global> {
           builder: (context, snapshot) {
             if (snapshot.hasError) {
               return Center(
-                child: Text("Error"),
+                child: Text('error'.tr().toString()),
               );
             }
             switch (snapshot.connectionState) {
@@ -66,7 +67,7 @@ class _GlobalState extends State<Global> {
               default:
                 return !snapshot.hasData
                     ? Center(
-                        child: Text("Empty"),
+                        child: Text('empty'.tr().toString()),
                       )
                     : GlobalStatistics(
                       summary: snapshot.data,

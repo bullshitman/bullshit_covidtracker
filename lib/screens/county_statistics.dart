@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../models/country_summary.dart';
 import '../utils/constants.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:easy_localization/easy_localization.dart';
 
 class CountryStatistics extends StatelessWidget {
   final List<CountrySummaryModel> summaryList;
@@ -15,17 +16,17 @@ class CountryStatistics extends StatelessWidget {
     return Column(
       children: <Widget>[
         buildCard(
-          "Confirmed", 
+          'confirmed'.tr().toString(), 
           summaryList[summaryList.length - 1].confirmed, 
           mConfirmedColor, 
-          "Active", 
+          'active'.tr().toString(), 
           summaryList[summaryList.length - 1].active, 
           mActiveColor),
         buildCard(
-          "Recovered", 
+          'recovered'.tr().toString(), 
           summaryList[summaryList.length - 1].recovered, 
           mRecoveredColor, 
-          "Dead", 
+          'dead'.tr().toString(), 
           summaryList[summaryList.length - 1].deaths, 
           mDeathColor),
           buildCardChart(summaryList),  
@@ -58,7 +59,7 @@ class CountryStatistics extends StatelessWidget {
                       child: Container(),
                     ),
                     Text(
-                      "Total",
+                      'total'.tr().toString(),
                       style: TextStyle(
                         color: leftColor,
                         fontWeight: FontWeight.bold,
@@ -90,7 +91,7 @@ class CountryStatistics extends StatelessWidget {
                       child: Container(),
                     ),
                     Text(
-                      "Total",
+                      'total'.tr().toString(),
                       style: TextStyle(
                         color: rightColor,
                         fontWeight: FontWeight.bold,

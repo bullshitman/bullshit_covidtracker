@@ -1,0 +1,17 @@
+{
+    "main_title": "Covid live tracker",
+    "title": "Covid-19 tracker live data",
+    "global": "Global",
+    "country": "Country",
+    "error": "Error",
+    "empty": "Empty",
+    "country_name": "Type a country name...",
+    "country_name_input": "Country name",
+    "confirmed": "Confirmed",
+    "recovered": "Recovered",
+    "dead": "Dead",
+    "active": "Active",
+    "total": "Total",
+    "today": "Today",
+    "updated_ago": "Statistics updated "
+}

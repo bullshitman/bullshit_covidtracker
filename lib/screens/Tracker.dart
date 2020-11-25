@@ -5,6 +5,7 @@ import 'global.dart';
 import 'country.dart';
 import '../utils/constants.dart';
 import 'navigation_options.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 enum NavigationStatus {
   GLOBAL,
@@ -26,7 +27,7 @@ class _TrackerState extends State<Tracker> {
       appBar: AppBar(
         backgroundColor: mPrimaryColor,
         elevation: 0,
-        title: Text("Covid-19 tracker live data"),
+        title: Text('title'.tr().toString()),
         centerTitle: true,
       ),
       body: Column(
@@ -53,7 +54,7 @@ class _TrackerState extends State<Tracker> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 NavigationOption(
-                  title: "Global", 
+                  title: "global".tr().toString(), 
                   selected: navigationStatus == NavigationStatus.GLOBAL, 
                   onSelected: () {
                     setState(() {
@@ -62,7 +63,7 @@ class _TrackerState extends State<Tracker> {
                   }
                 ),
                 NavigationOption(
-                  title: "Country", 
+                  title: "country".tr().toString(), 
                   selected: navigationStatus == NavigationStatus.COUNTRY, 
                   onSelected: () {
                     setState(() {

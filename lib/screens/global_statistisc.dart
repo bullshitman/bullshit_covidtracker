@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 import '../models/global_summary.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:easy_localization/easy_localization.dart';
 
 class GlobalStatistics extends StatelessWidget {
   final GlobalSummaryModel summary;
@@ -13,25 +14,25 @@ class GlobalStatistics extends StatelessWidget {
     return Column(
       children: <Widget>[
         buildCard(
-          "Confirmed",
+          'confirmed'.tr().toString(),
           summary.totalConfirmed,
           summary.newConfirmed,
           mConfirmedColor,
         ),
         buildCard(
-          "Active",
+          'active'.tr().toString(),
           summary.totalConfirmed - summary.totalRecovered - summary.totalDeaths,
           summary.newConfirmed - summary.newRecovered - summary.newDeaths,
           mActiveColor,
         ),
         buildCard(
-          "Recovered",
+          'recovered'.tr().toString(),
           summary.totalRecovered,
           summary.newRecovered,
           mRecoveredColor,
         ),
         buildCard(
-          "Dead",
+          'dead'.tr().toString(),
           summary.totalDeaths,
           summary.newDeaths,
           mDeathColor,
@@ -39,7 +40,7 @@ class GlobalStatistics extends StatelessWidget {
          Padding(
           padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
           child: Text(
-            "Statistics updated " + timeago.format(summary.date),
+            'updated_ago'.tr().toString() + timeago.format(summary.date),
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -78,7 +79,7 @@ class GlobalStatistics extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Total",
+                      'total'.tr().toString(),
                       style: TextStyle(
                         color: color,
                         fontWeight: FontWeight.bold,
@@ -99,7 +100,7 @@ class GlobalStatistics extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     Text(
-                      "Today",
+                      'today'.tr().toString(),
                       style: TextStyle(
                         color: color,
                         fontWeight: FontWeight.bold,

@@ -6,6 +6,7 @@ import '../models/country.dart';
 import '../models/country_summary.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import '../screens/county_statistics.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 CovidServise covidService = CovidServise();
 
@@ -44,7 +45,7 @@ class _CountryState extends State<Country> {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(
-            child: Text("Error"),
+            child: Text('error'.tr().toString()),
           );
         }
         switch (snapshot.connectionState) {
@@ -53,7 +54,7 @@ class _CountryState extends State<Country> {
           default:
             return !snapshot.hasData
                 ? Center(
-                    child: Text("Empty"),
+                    child: Text('empty'.tr().toString()),
                   )
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -63,7 +64,7 @@ class _CountryState extends State<Country> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 4, vertical: 6),
                         child: Text(
-                          "Type the country name...",
+                          'country_name'.tr().toString(),
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -77,7 +78,7 @@ class _CountryState extends State<Country> {
                           //clear text for better user xp
                           onTap: () => _typeAheadController.clear(),          
                           decoration: InputDecoration(
-                            hintText: "Type a country name here",
+                            hintText: 'country_name_input'.tr().toString(),
                             hintStyle: TextStyle(fontSize: 16),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
@@ -126,7 +127,7 @@ class _CountryState extends State<Country> {
                         future: summaryList,
                         builder: (context, snapshot) {
                           if (snapshot.hasError) {
-                            return Center(child: Text("Error"));
+                            return Center(child: Text('error'.tr().toString()));
                           }
                           switch (snapshot.connectionState) {
                             case ConnectionState.waiting:
@@ -134,7 +135,7 @@ class _CountryState extends State<Country> {
                             default:
                               return !snapshot.hasData
                                   ? Center(
-                                      child: Text("Empty"),
+                                      child: Text('empty'.tr().toString()),
                                     )
                                   : CountryStatistics(
                                     summaryList: snapshot.data,
